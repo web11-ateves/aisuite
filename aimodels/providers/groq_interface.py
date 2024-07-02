@@ -1,21 +1,21 @@
-"""The interface to the OpenAI API."""
+"""The interface to the Groq API."""
 
 import os
 
 from ..framework.provider_interface import ProviderInterface
 
 
-class OpenAIInterface(ProviderInterface):
-    """Implements the ProviderInterface for interacting with OpenAI's APIs."""
+class GroqInterface(ProviderInterface):
+    """Implements the ProviderInterface for interacting with Groq's APIs."""
 
     def __init__(self):
-        """Set up the OpenAI client using the API key obtained from the user's environment."""
-        import openai
+        """Set up the Groq client using the API key obtained from the user's environment."""
+        import groq
 
-        self.openai_client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        self.groq_client = groq.Groq(api_key=os.getenv("GROQ_API_KEY"))
 
     def chat_completion_create(self, messages=None, model=None, temperature=0):
-        """Request chat completions from the OpenAI API.
+        """Request chat completions from the Groq API.
 
         Args:
         ----
@@ -28,7 +28,7 @@ class OpenAIInterface(ProviderInterface):
             The API response with the completion result.
 
         """
-        return self.openai_client.chat.completions.create(
+        return self.groq_client.chat.completions.create(
             model=model,
             messages=messages,
             temperature=temperature,
