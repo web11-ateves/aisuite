@@ -8,10 +8,10 @@ from .chat import Chat
 class MultiFMClient:
     """Manages multiple provider interfaces."""
 
-    _MODEL_FORMAT_ERROR = (
+    _MODEL_FORMAT_ERROR_MESSAGE_TEMPLATE = (
         "Expected ':' in model identifier to specify provider:model. Got {model}."
     )
-    _NO_FACTORY_ERROR = (
+    _NO_FACTORY_ERROR_MESSAGE_TEMPLATE = (
         "Could not find factory to create interface for provider '{provider}'."
     )
 
@@ -50,7 +50,9 @@ class MultiFMClient:
 
         """
         if ":" not in model:
-            raise ValueError(self._MODEL_FORMAT_ERROR.format(model=model))
+            raise ValueError(
+                self._MODEL_FORMAT_ERROR_MESSAGE_TEMPLATE.format(model=model)
+            )
 
         model_parts = model.split(":", maxsplit=1)
         provider = model_parts[0]
@@ -60,7 +62,9 @@ class MultiFMClient:
             return self.all_interfaces[provider]
 
         if provider not in self.all_factories:
-            raise Exception(self._NO_FACTORY_ERROR.format(provider=provider))
+            raise Exception(
+                self._NO_FACTORY_ERROR_MESSAGE_TEMPLATE.format(provider=provider)
+            )
 
         self.all_interfaces[provider] = self.all_factories[provider]()
         return self.all_interfaces[provider], model_name
