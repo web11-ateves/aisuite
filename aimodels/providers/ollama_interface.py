@@ -2,6 +2,7 @@
 
 from aimodels.framework import ProviderInterface, ChatCompletionResponse
 from httpx import ConnectError
+import os
 
 
 class OllamaInterface(ProviderInterface):
@@ -9,7 +10,9 @@ class OllamaInterface(ProviderInterface):
 
     _OLLAMA_STATUS_ERROR_MESSAGE = "Ollama is likely not running. Start Ollama by running `ollama serve` on your host."
 
-    def __init__(self, server_url="http://localhost:11434"):
+    def __init__(
+        self, server_url=os.getenv("OLLAMA_API_URL", "http://localhost:11434")
+    ):
         """Set up the Ollama API client with the key from the user's environment."""
         from ollama import Client
 
