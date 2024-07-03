@@ -1,7 +1,6 @@
 """MultiFMClient manages a Chat across multiple provider interfaces."""
 
-from ..providers.openai_interface import OpenAIInterface
-from ..providers.groq_interface import GroqInterface
+from ..providers import AnthropicInterface, OpenAIInterface, GroqInterface
 from .chat import Chat
 
 
@@ -30,6 +29,7 @@ class MultiFMClient:
         self.all_factories = {
             "openai": OpenAIInterface,
             "groq": GroqInterface,
+            "anthropic": AnthropicInterface,
         }
 
     def get_provider_interface(self, model):

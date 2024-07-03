@@ -31,7 +31,7 @@ class Completions:
         interface, model_name = self.topmost_instance.get_provider_interface(model)
 
         return interface.chat_completion_create(
-            messages,
+            messages=messages,
             model=model_name,
             temperature=temperature,
         )
