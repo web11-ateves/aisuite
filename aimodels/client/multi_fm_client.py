@@ -7,6 +7,8 @@ from ..providers import (
     MistralInterface,
     OllamaInterface,
     OpenAIInterface,
+    FireworksInterface,
+    ReplicateInterface,
 )
 
 
@@ -38,6 +40,8 @@ class MultiFMClient:
             "mistral": MistralInterface,
             "ollama": OllamaInterface,
             "openai": OpenAIInterface,
+            "fireworks": FireworksInterface,
+            "replicate": ReplicateInterface,
         }
 
     def get_provider_interface(self, model):
