@@ -3,11 +3,11 @@
 from .chat import Chat
 from ..providers import (
     AnthropicInterface,
+    FireworksInterface,
     GroqInterface,
     MistralInterface,
     OllamaInterface,
     OpenAIInterface,
-    FireworksInterface,
     ReplicateInterface,
 )
 
@@ -36,11 +36,11 @@ class MultiFMClient:
         self.all_interfaces = {}
         self.all_factories = {
             "anthropic": AnthropicInterface,
+            "fireworks": FireworksInterface,
             "groq": GroqInterface,
             "mistral": MistralInterface,
             "ollama": OllamaInterface,
             "openai": OpenAIInterface,
-            "fireworks": FireworksInterface,
             "replicate": ReplicateInterface,
         }
 

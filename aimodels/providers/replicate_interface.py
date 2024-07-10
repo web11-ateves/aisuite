@@ -4,6 +4,8 @@ import os
 
 from ..framework.provider_interface import ProviderInterface
 
+_REPLICATE_BASE_URL = "https://openai-proxy.replicate.com/v1"
+
 
 class ReplicateInterface(ProviderInterface):
     """Implements the ProviderInterface for interacting with Replicate's APIs."""
@@ -14,7 +16,7 @@ class ReplicateInterface(ProviderInterface):
 
         self.replicate_client = OpenAI(
             api_key=os.getenv("REPLICATE_API_KEY"),
-            base_url="https://openai-proxy.replicate.com/v1",
+            base_url=_REPLICATE_BASE_URL,
         )
 
     def chat_completion_create(self, messages=None, model=None, temperature=0):
