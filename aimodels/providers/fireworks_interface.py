@@ -4,6 +4,7 @@ import os
 
 from ..framework.provider_interface import ProviderInterface
 
+
 class FireworksInterface(ProviderInterface):
     """Implements the ProviderInterface for interacting with Fireworks's APIs."""
 
