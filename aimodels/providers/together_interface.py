@@ -1,4 +1,4 @@
-"""The interface to the Groq API."""
+"""The interface to the Together API."""
 
 import os
 
