@@ -9,6 +9,7 @@ from ..providers import (
     OllamaInterface,
     OpenAIInterface,
     ReplicateInterface,
+    TogetherInterface,
 )
 
 
@@ -42,6 +43,7 @@ class MultiFMClient:
             "ollama": OllamaInterface,
             "openai": OpenAIInterface,
             "replicate": ReplicateInterface,
+            "together": TogetherInterface,
         }
 
     def get_provider_interface(self, model):
