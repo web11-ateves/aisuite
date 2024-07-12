@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "aimodels"
+version = "0.1.0"
+description = ""
+authors = ["Andrew Ng"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+pre-commit = "^3.7.1"
+black = "^24.4.2"
+python-dotenv = "^1.0.1"
+openai = "^1.35.8"
+groq = "^0.9.0"
+anthropic = "^0.30.1"
+notebook = "^7.2.1"
+ollama = "^0.2.1"
+mistralai = "^0.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
