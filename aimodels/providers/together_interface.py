@@ -6,6 +6,7 @@ from ..framework.provider_interface import ProviderInterface
 
 _TOGETHER_BASE_URL = "https://api.together.xyz/v1"
 
+
 class TogetherInterface(ProviderInterface):
     """Implements the ProviderInterface for interacting with Together's APIs."""
 
@@ -17,6 +18,7 @@ class TogetherInterface(ProviderInterface):
             api_key=os.getenv("TOGETHER_API_KEY"),
             base_url=_TOGETHER_BASE_URL,
         )
+
     def chat_completion_create(self, messages=None, model=None, temperature=0):
         """Request chat completions from the Together API.
 
