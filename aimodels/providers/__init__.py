@@ -7,3 +7,4 @@ from .mistral_interface import MistralInterface
 from .ollama_interface import OllamaInterface
 from .openai_interface import OpenAIInterface
 from .replicate_interface import ReplicateInterface
+from .together_interface import TogetherInterface
