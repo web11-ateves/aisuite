@@ -10,6 +10,7 @@ from ..providers import (
     OpenAIInterface,
     ReplicateInterface,
     TogetherInterface,
+    OctoInterface,
 )
 
 
@@ -44,6 +45,7 @@ class MultiFMClient:
             "openai": OpenAIInterface,
             "replicate": ReplicateInterface,
             "together": TogetherInterface,
+            "octo": OctoInterface,
         }
 
     def get_provider_interface(self, model):
