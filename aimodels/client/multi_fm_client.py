@@ -11,6 +11,7 @@ from ..providers import (
     ReplicateInterface,
     TogetherInterface,
     OctoInterface,
+    AWSBedrockInterface,
 )
 
 
@@ -46,6 +47,7 @@ class MultiFMClient:
             "replicate": ReplicateInterface,
             "together": TogetherInterface,
             "octo": OctoInterface,
+            "aws": AWSBedrockInterface
         }
 
     def get_provider_interface(self, model):
