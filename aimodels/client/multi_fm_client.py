@@ -47,7 +47,7 @@ class MultiFMClient:
             "replicate": ReplicateInterface,
             "together": TogetherInterface,
             "octo": OctoInterface,
-            "aws": AWSBedrockInterface
+            "aws": AWSBedrockInterface,
         }
 
     def get_provider_interface(self, model):
