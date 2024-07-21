@@ -21,6 +21,7 @@ notebook = "^7.2.1"
 ollama = "^0.2.1"
 mistralai = "^0.4.2"
 boto3 = "^1.34.144"
+fireworks-ai = "^0.14.0"
 
 [build-system]
 requires = ["poetry-core"]
