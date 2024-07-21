@@ -39,11 +39,11 @@ pip install openai anthropic
 In your python code:
 
 ```python
-from aimodels.client import MultiFMClient
+import aimodels as ai
+client = ai.Client()
 
 models = ["openai:gpt-4o", "anthropic:claude-3-5-sonnet-20240620"]
 
-client = MultiFMClient()
 messages = [
     {"role": "system", "content": "Respond in Pirate English."},
     {"role": "user", "content": "Tell me a joke."},

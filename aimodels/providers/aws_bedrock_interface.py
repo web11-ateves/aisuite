@@ -2,7 +2,6 @@
 
 import os
 from urllib.request import urlopen
-import boto3
 import json
 
 from ..framework.provider_interface import ProviderInterface
@@ -69,6 +68,8 @@ class AWSBedrockInterface(ProviderInterface):
 
     def __init__(self):
         """Set up the AWS Bedrock client using the AWS access key id and secret access key obtained from the user's environment."""
+        import boto3
+
         self.aws_bedrock_client = boto3.client(
             service_name="bedrock-runtime",
             region_name="us-west-2",

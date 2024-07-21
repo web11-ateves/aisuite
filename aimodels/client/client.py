@@ -1,4 +1,4 @@
-"""MultiFMClient manages a Chat across multiple provider interfaces."""
+"""Client manages a Chat across multiple provider interfaces."""
 
 from .chat import Chat
 from ..providers import (
@@ -15,7 +15,7 @@ from ..providers import (
 )
 
 
-class MultiFMClient:
+class Client:
     """Manages multiple provider interfaces."""
 
     _MODEL_FORMAT_ERROR_MESSAGE_TEMPLATE = (
@@ -26,7 +26,7 @@ class MultiFMClient:
     )
 
     def __init__(self):
-        """Initialize the MultiFMClient instance.
+        """Initialize the Client instance.
 
         Attributes
         ----------

@@ -11,7 +11,7 @@ class Chat:
 
         Args:
         ----
-            topmost_instance: The chat session's client instance (MultiFMClient).
+            topmost_instance: The chat session's client instance (Client).
 
         """
         self.topmost_instance = topmost_instance
