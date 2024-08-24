@@ -18,22 +18,43 @@ def test_vertex_interface():
     user_greeting = "Hello!"
     message_history = [{"role": "user", "content": user_greeting}]
     selected_model = "our-favorite-model"
+    response_text_content = "mocked-text-response-from-model"
 
     interface = VertexInterface()
+    mock_response = MagicMock()
+    mock_response.candidates = [MagicMock()]
+    mock_response.candidates[0].content.parts[0].text = response_text_content
 
-    with patch("vertexai.generative_models.GenerativeModel") as mock_model:
+    with patch("vertexai.generative_models.GenerativeModel") as mock_generative_model:
+        mock_model = MagicMock()
+        mock_generative_model.return_value = mock_model
         mock_chat = MagicMock()
-        mock_model.return_value.start_chat.return_value = mock_chat
-        mock_chat.send_message.return_value = "Mocked response"
+        mock_model.start_chat.return_value = mock_chat
+        mock_chat.send_message.return_value = mock_response
 
         response = interface.chat_completion_create(
-            messages=message_history, model=selected_model
+            messages=message_history,
+            model=selected_model,
+            temperature=0.7,
         )
 
-        mock_model.assert_called_once_with(selected_model)
-        mock_model.return_value.start_chat.assert_called_once()
+        # Assert that GenerativeModel was called with correct arguments.
+        mock_generative_model.assert_called_once()
+        args, kwargs = mock_generative_model.call_args
+        assert args[0] == selected_model
+        assert "generation_config" in kwargs
+
+        # Assert that start_chat was called with correct history.
+        mock_model.start_chat.assert_called_once()
+        _chat_args, chat_kwargs = mock_model.start_chat.call_args
+        assert "history" in chat_kwargs
+        assert isinstance(chat_kwargs["history"], list)
+
+        # Assert that send_message was called with the last message.
         mock_chat.send_message.assert_called_once_with(user_greeting)
-        assert response == "Mocked response"
+
+        # Assert that the response is in the correct format.
+        assert response.choices[0].message.content == response_text_content
 
 
 def test_convert_openai_to_vertex_ai():
