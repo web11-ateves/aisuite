@@ -26,6 +26,7 @@ fireworks-ai = "^0.14.0"
 chromadb = "^0.5.4"
 sentence-transformers = "^3.0.1"
 datasets = "^2.20.0"
+vertexai = "^1.63.0"
 
 [build-system]
 requires = ["poetry-core"]
