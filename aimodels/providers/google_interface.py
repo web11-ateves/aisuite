@@ -12,7 +12,7 @@ class GoogleInterface(ProviderInterface):
         import vertexai
 
         vertexai.init(
-            project=os.getenv("VERTEX_PROJECT_ID"), location=os.getenv("VERTEX_REGION")
+            project=os.getenv("GOOGLE_PROJECT_ID"), location=os.getenv("GOOGLE_REGION")
         )
 
     def chat_completion_create(self, messages=None, model=None, temperature=0):

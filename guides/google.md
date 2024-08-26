@@ -18,11 +18,11 @@ Now that you have a project, you'll need to enable billing. Visit the [how-to pa
 
 ### Set your project ID in an environment variable.
 
-Set the `VERTEX_PROJECT_ID` environment variable to the ID of your project. You can find the Project ID by visiting the project dashboard in the "Project Info" section toward the top of the page.
+Set the `GOOGLE_PROJECT_ID` environment variable to the ID of your project. You can find the Project ID by visiting the project dashboard in the "Project Info" section toward the top of the page.
 
 ### Set your preferred region in an environment variable.
 
-Set the `VERTEX_REGION` environment variable to the ID of your project. You can find the Project ID by visiting the project dashboard in the "Project Info" section toward the top of the page.
+Set the `GOOGLE_REGION` environment variable to the ID of your project. You can find the Project ID by visiting the project dashboard in the "Project Info" section toward the top of the page.
 
 ## Create a Service Account For API Access
 
@@ -44,8 +44,8 @@ This is documented [here](https://cloud.google.com/docs/authentication/provide-c
 
 At this point, you should have three environment variables set to ensure your environment is set up correctly:
 
-- `VERTEX_PROJECT_ID`
-- `VERTEX_REGION`
+- `GOOGLE_PROJECT_ID`
+- `GOOGLE_REGION`
 - `GOOGLE_APPLICATION_CREDENTIALS`
 
 Once these are set, you are ready to write some code and send a chat completion request.
@@ -57,8 +57,8 @@ With your account and service account set up, you can send a chat completion req
 Export the environment variables:
 
 ```shell
-export VERTEX_PROJECT_ID="your-project-id"
-export VERTEX_REGION="your-region"
+export GOOGLE_PROJECT_ID="your-project-id"
+export GOOGLE_REGION="your-region"
 export GOOGLE_APPLICATION_CREDENTIALS="path/to/your/service-account-file.json"
 ```
 

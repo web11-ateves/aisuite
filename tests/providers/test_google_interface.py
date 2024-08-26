@@ -8,8 +8,8 @@ from vertexai.generative_models import Content, Part
 def set_api_key_env_var(monkeypatch):
     """Fixture to set environment variables for tests."""
     monkeypatch.setenv("GOOGLE_APPLICATION_CREDENTIALS", "path-to-service-account-json")
-    monkeypatch.setenv("VERTEX_PROJECT_ID", "vertex-project-id")
-    monkeypatch.setenv("VERTEX_REGION", "us-central1")
+    monkeypatch.setenv("GOOGLE_PROJECT_ID", "vertex-project-id")
+    monkeypatch.setenv("GOOGLE_REGION", "us-central1")
 
 
 def test_vertex_interface():
