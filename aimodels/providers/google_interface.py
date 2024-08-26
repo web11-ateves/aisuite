@@ -39,16 +39,15 @@ class GoogleInterface(ProviderInterface):
         """
         from vertexai.generative_models import GenerativeModel, GenerationConfig
 
-        without_system_messages = self.transform_roles(
-            messages=messages, from_role="system", to_role="user"
+        transformed_messages = self.transform_roles(
+            messages=messages,
+            transformations=[("system", "user"), ("assistant", "model")],
         )
 
-        with_model_roles = self.transform_roles(
-            messages=without_system_messages, from_role="assistant", to_role="model"
+        final_message_history = self.convert_openai_to_vertex_ai(
+            transformed_messages[:-1]
         )
-
-        final_message_history = self.convert_openai_to_vertex_ai(with_model_roles[:-1])
-        last_message = with_model_roles[-1]["content"]
+        last_message = transformed_messages[-1]["content"]
 
         model = GenerativeModel(
             model, generation_config=GenerationConfig(temperature=temperature)
@@ -70,12 +69,17 @@ class GoogleInterface(ProviderInterface):
             history.append(Content(role=role, parts=parts))
         return history
 
-    def transform_roles(self, messages, from_role, to_role):
-        """Transform the roles in the messages to the desired role."""
+    def transform_roles(self, messages, transformations):
+        """Transform the roles in the messages based on the provided transformations."""
+        transformed_messages = []
         for message in messages:
-            if message["role"] == from_role:
-                message["role"] = to_role
-        return messages
+            new_message = message.copy()
+            for from_role, to_role in transformations:
+                if new_message["role"] == from_role:
+                    new_message["role"] = to_role
+                    break
+            transformed_messages.append(new_message)
+        return transformed_messages
 
     def convert_response_to_openai_format(self, response):
         """Convert Google AI response to OpenAI's ChatCompletionResponse format."""

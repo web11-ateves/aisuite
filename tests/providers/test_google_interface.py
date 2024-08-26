@@ -90,9 +90,11 @@ def test_transform_roles():
     expected_output = [
         {"role": "user", "content": "Google: system message = 1st user message."},
         {"role": "user", "content": "User message 1."},
-        {"role": "assistant", "content": "Assistant message 1."},
+        {"role": "model", "content": "Assistant message 1."},
     ]
 
-    result = interface.transform_roles(messages, from_role="system", to_role="user")
+    result = interface.transform_roles(
+        messages, transformations=[("system", "user"), ("assistant", "model")]
+    )
 
     assert result == expected_output
