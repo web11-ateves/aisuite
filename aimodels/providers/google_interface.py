@@ -11,9 +11,18 @@ class GoogleInterface(ProviderInterface):
         """Set up the Google AI client with a project ID."""
         import vertexai
 
-        vertexai.init(
-            project=os.getenv("GOOGLE_PROJECT_ID"), location=os.getenv("GOOGLE_REGION")
-        )
+        project_id = os.getenv("GOOGLE_PROJECT_ID")
+        location = os.getenv("GOOGLE_REGION")
+        app_creds_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+
+        if not project_id or not location or not app_creds_path:
+            raise EnvironmentError(
+                "Missing one or more required Google environment variables: "
+                "GOOGLE_PROJECT_ID, GOOGLE_REGION, GOOGLE_APPLICATION_CREDENTIALS. "
+                "Please refer to the setup guide: /guides/google.md."
+            )
+
+        vertexai.init(project=project_id, location=location)
 
     def chat_completion_create(self, messages=None, model=None, temperature=0):
         """Request chat completions from the Google AI API.

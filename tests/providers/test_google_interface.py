@@ -12,6 +12,16 @@ def set_api_key_env_var(monkeypatch):
     monkeypatch.setenv("GOOGLE_REGION", "us-central1")
 
 
+def test_missing_env_vars():
+    """Test that an error is raised if required environment variables are missing."""
+    with patch.dict("os.environ", {}, clear=True):
+        with pytest.raises(EnvironmentError) as exc_info:
+            GoogleInterface()
+        assert "Missing one or more required Google environment variables" in str(
+            exc_info.value
+        )
+
+
 def test_vertex_interface():
     """High-level test that the interface is initialized and chat completions are requested successfully."""
 
