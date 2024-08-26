@@ -1,14 +1,14 @@
-"""The interface to Vertex AI."""
+"""The interface to Google's Vertex AI."""
 
 import os
 from aimodels.framework import ProviderInterface, ChatCompletionResponse
 
 
-class VertexInterface(ProviderInterface):
-    """Implements the ProviderInterface for interacting with Vertex AI."""
+class GoogleInterface(ProviderInterface):
+    """Implements the ProviderInterface for interacting with Google's Vertex AI."""
 
     def __init__(self):
-        """Set up the Vertex AI client with a project ID."""
+        """Set up the Google AI client with a project ID."""
         import vertexai
 
         vertexai.init(
@@ -16,7 +16,7 @@ class VertexInterface(ProviderInterface):
         )
 
     def chat_completion_create(self, messages=None, model=None, temperature=0):
-        """Request chat completions from the Vertex AI API.
+        """Request chat completions from the Google AI API.
 
         Args:
         ----
@@ -50,7 +50,7 @@ class VertexInterface(ProviderInterface):
         return self.convert_response_to_openai_format(response)
 
     def convert_openai_to_vertex_ai(self, messages):
-        """Convert OpenAI messages to Vertex AI messages."""
+        """Convert OpenAI messages to Google AI messages."""
         from vertexai.generative_models import Content, Part
 
         history = []
@@ -69,7 +69,7 @@ class VertexInterface(ProviderInterface):
         return messages
 
     def convert_response_to_openai_format(self, response):
-        """Convert Vertex AI response to OpenAI's ChatCompletionResponse format."""
+        """Convert Google AI response to OpenAI's ChatCompletionResponse format."""
         openai_response = ChatCompletionResponse()
         openai_response.choices[0].message.content = (
             response.candidates[0].content.parts[0].text

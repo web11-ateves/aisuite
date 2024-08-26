@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from aimodels.providers.vertex_interface import VertexInterface
+from aimodels.providers.google_interface import GoogleInterface
 from vertexai.generative_models import Content, Part
 
 
@@ -20,7 +20,7 @@ def test_vertex_interface():
     selected_model = "our-favorite-model"
     response_text_content = "mocked-text-response-from-model"
 
-    interface = VertexInterface()
+    interface = GoogleInterface()
     mock_response = MagicMock()
     mock_response.candidates = [MagicMock()]
     mock_response.candidates[0].content.parts[0].text = response_text_content
@@ -58,7 +58,7 @@ def test_vertex_interface():
 
 
 def test_convert_openai_to_vertex_ai():
-    interface = VertexInterface()
+    interface = GoogleInterface()
     message_history = [{"role": "user", "content": "Hello!"}]
     result = interface.convert_openai_to_vertex_ai(message_history)
     assert isinstance(result[0], Content)
@@ -69,16 +69,16 @@ def test_convert_openai_to_vertex_ai():
 
 
 def test_transform_roles():
-    interface = VertexInterface()
+    interface = GoogleInterface()
 
     messages = [
-        {"role": "system", "content": "Vertex: system message = 1st user message."},
+        {"role": "system", "content": "Google: system message = 1st user message."},
         {"role": "user", "content": "User message 1."},
         {"role": "assistant", "content": "Assistant message 1."},
     ]
 
     expected_output = [
-        {"role": "user", "content": "Vertex: system message = 1st user message."},
+        {"role": "user", "content": "Google: system message = 1st user message."},
         {"role": "user", "content": "User message 1."},
         {"role": "assistant", "content": "Assistant message 1."},
     ]

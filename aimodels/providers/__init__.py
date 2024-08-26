@@ -10,4 +10,4 @@ from .ollama_interface import OllamaInterface
 from .openai_interface import OpenAIInterface
 from .replicate_interface import ReplicateInterface
 from .together_interface import TogetherInterface
-from .vertex_interface import VertexInterface
+from .google_interface import GoogleInterface

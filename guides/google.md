@@ -1,6 +1,6 @@
-# Vertex AI
+# Google (Vertex) AI
 
-To use Vertex AI with the `aimodels` library, you'll first need to create a Google Cloud account and set up your environment to work with Google Cloud.
+To use Google (Vertex) AI with the `aimodels` library, you'll first need to create a Google Cloud account and set up your environment to work with Google Cloud.
 
 ## Create a Google Cloud Account and Project
 
