@@ -93,8 +93,6 @@ def test_transform_roles():
         {"role": "model", "content": "Assistant message 1."},
     ]
 
-    result = interface.transform_roles(
-        messages, transformations=[("system", "user"), ("assistant", "model")]
-    )
+    result = interface.transform_roles(messages)
 
     assert result == expected_output

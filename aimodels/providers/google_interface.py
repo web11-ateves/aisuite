@@ -39,10 +39,7 @@ class GoogleInterface(ProviderInterface):
         """
         from vertexai.generative_models import GenerativeModel, GenerationConfig
 
-        transformed_messages = self.transform_roles(
-            messages=messages,
-            transformations=[("system", "user"), ("assistant", "model")],
-        )
+        transformed_messages = self.transform_roles(messages)
 
         final_message_history = self.convert_openai_to_vertex_ai(
             transformed_messages[:-1]
@@ -69,17 +66,17 @@ class GoogleInterface(ProviderInterface):
             history.append(Content(role=role, parts=parts))
         return history
 
-    def transform_roles(self, messages, transformations):
+    def transform_roles(self, messages):
         """Transform the roles in the messages based on the provided transformations."""
-        transformed_messages = []
+        openai_roles_to_google_roles = {
+            "system": "user",
+            "assistant": "model",
+        }
+
         for message in messages:
-            new_message = message.copy()
-            for from_role, to_role in transformations:
-                if new_message["role"] == from_role:
-                    new_message["role"] = to_role
-                    break
-            transformed_messages.append(new_message)
-        return transformed_messages
+            if role := openai_roles_to_google_roles.get(message["role"], None):
+                message["role"] = role
+        return messages
 
     def convert_response_to_openai_format(self, response):
         """Convert Google AI response to OpenAI's ChatCompletionResponse format."""
