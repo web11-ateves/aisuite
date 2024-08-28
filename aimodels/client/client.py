@@ -12,6 +12,7 @@ from ..providers import (
     OpenAIInterface,
     ReplicateInterface,
     TogetherInterface,
+    GoogleInterface,
 )
 
 
@@ -48,6 +49,7 @@ class Client:
             "openai": OpenAIInterface,
             "replicate": ReplicateInterface,
             "together": TogetherInterface,
+            "google": GoogleInterface,
         }
 
     def get_provider_interface(self, model):
