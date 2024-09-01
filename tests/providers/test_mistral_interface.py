@@ -3,7 +3,7 @@ from unittest.mock import patch, MagicMock
 
 from mistralai.models.chat_completion import ChatMessage
 
-from aimodels.providers.mistral_interface import MistralInterface
+from aisuite.providers.mistral_interface import MistralInterface
 
 
 @pytest.fixture(autouse=True)

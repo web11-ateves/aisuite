@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "aimodels"
+name = "aisuite"
 version = "0.1.0"
 description = ""
 authors = ["Andrew Ng"]

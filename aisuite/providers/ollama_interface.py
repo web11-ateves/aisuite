@@ -1,6 +1,6 @@
 """The interface to the Ollama API."""
 
-from aimodels.framework import ProviderInterface, ChatCompletionResponse
+from aisuite.framework import ProviderInterface, ChatCompletionResponse
 from httpx import ConnectError
 import os
 

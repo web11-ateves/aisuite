@@ -1,4 +1,4 @@
-from aimodels.framework.message import Message
+from aisuite.framework.message import Message
 
 
 class Choice:

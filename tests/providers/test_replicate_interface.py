@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from aimodels.providers.replicate_interface import ReplicateInterface
+from aisuite.providers.replicate_interface import ReplicateInterface
 
 
 @pytest.fixture(autouse=True)

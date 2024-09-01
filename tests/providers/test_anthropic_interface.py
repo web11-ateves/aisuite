@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from aimodels.providers.anthropic_interface import AnthropicInterface
+from aisuite.providers.anthropic_interface import AnthropicInterface
 
 
 @pytest.fixture(autouse=True)

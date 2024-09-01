@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from aimodels.providers.fireworks_interface import FireworksInterface
+from aisuite.providers.fireworks_interface import FireworksInterface
 
 
 @pytest.fixture(autouse=True)

@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from aimodels.providers.ollama_interface import OllamaInterface
+from aisuite.providers.ollama_interface import OllamaInterface
 from httpx import ConnectError
 
 
