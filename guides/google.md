@@ -1,6 +1,6 @@
 # Google (Vertex) AI
 
-To use Google (Vertex) AI with the `aimodels` library, you'll first need to create a Google Cloud account and set up your environment to work with Google Cloud.
+To use Google (Vertex) AI with the `aisuite` library, you'll first need to create a Google Cloud account and set up your environment to work with Google Cloud.
 
 ## Create a Google Cloud Account and Project
 
@@ -26,7 +26,7 @@ Set the `GOOGLE_REGION` environment variable to the ID of your project. You can 
 
 ## Create a Service Account For API Access
 
-Because `aimodels` needs to authenticate with Google Cloud to access the Vertex AI API, you'll need to create a service account and set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of a JSON file containing the service account's credentials, which you can download from the Google Cloud Console.
+Because `aisuite` needs to authenticate with Google Cloud to access the Vertex AI API, you'll need to create a service account and set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of a JSON file containing the service account's credentials, which you can download from the Google Cloud Console.
 
 This is documented [here](https://cloud.google.com/docs/authentication/provide-credentials-adc#how-to), and the basic steps are as follows:
 
@@ -71,7 +71,7 @@ pip install vertexai
 In your code:
 
 ```python
-import aimodels as ai
+import aisuite as ai
 client = ai.Client()
 
 model="vertex:gemini-1.5-pro-001"

@@ -1,4 +1,4 @@
-from aimodels.framework.choice import Choice
+from aisuite.framework.choice import Choice
 
 
 class ChatCompletionResponse:

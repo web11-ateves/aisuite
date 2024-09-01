@@ -1,18 +1,18 @@
-# aimodels
+# aisuite
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 Simple, unified interface to multiple Generative AI providers.
 
-`aimodels` is an tool designed for researchers who need to evaluate and compare the responses of
-multiple LLMs through a standardized interface. Based on the OpenAI interface standard, `aimodels`
+`aisuite` is an tool designed for researchers who need to evaluate and compare the responses of
+multiple LLMs through a standardized interface. Based on the OpenAI interface standard, `aisuite`
 makes it easy to interact with the most popular LLMs and compare the results of their chat based
 functionality, with support for more interfaces coming in the near future.
 
 ## Installation
 
 ```shell
-pip install aimodels
+pip install aisuite
 ```
 
 ## Set up
@@ -44,7 +44,7 @@ pip install openai anthropic
 In your python code:
 
 ```python
-import aimodels as ai
+import aisuite as ai
 client = ai.Client()
 
 models = ["openai:gpt-4o", "anthropic:claude-3-5-sonnet-20240620"]
@@ -67,12 +67,12 @@ for model in models:
 For more examples, check out the `examples` directory where you will find several
 notebooks that you can run to experiment with the interface.
 
-The current list of supported providers can be found in the `aimodels.providers`
+The current list of supported providers can be found in the `aisuite.providers`
 package.
 
 ## License
 
-aimodels is released under the MIT License. You are free to use, modify, and distribute
+aisuite is released under the MIT License. You are free to use, modify, and distribute
 the code for both commercial and non-commercial purposes.
 
 ## Contributing

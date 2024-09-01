@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from aimodels.providers.groq_interface import GroqInterface
+from aisuite.providers.groq_interface import GroqInterface
 
 
 @pytest.fixture(autouse=True)

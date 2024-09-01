@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from aimodels.providers.openai_interface import OpenAIInterface
+from aisuite.providers.openai_interface import OpenAIInterface
 
 
 @pytest.fixture(autouse=True)

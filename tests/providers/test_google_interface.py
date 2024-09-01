@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from aimodels.providers.google_interface import GoogleInterface
+from aisuite.providers.google_interface import GoogleInterface
 from vertexai.generative_models import Content, Part
 
 

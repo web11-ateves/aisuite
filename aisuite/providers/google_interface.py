@@ -1,7 +1,7 @@
 """The interface to Google's Vertex AI."""
 
 import os
-from aimodels.framework import ProviderInterface, ChatCompletionResponse
+from aisuite.framework import ProviderInterface, ChatCompletionResponse
 
 
 class GoogleInterface(ProviderInterface):

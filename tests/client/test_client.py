@@ -1,5 +1,5 @@
 import pytest
-from aimodels.client.client import Client, AnthropicInterface
+from aisuite.client.client import Client, AnthropicInterface
 
 
 def test_get_provider_interface_with_new_instance():

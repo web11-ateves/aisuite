@@ -1,6 +1,6 @@
 import os
 
-from aimodels.framework import ProviderInterface
+from aisuite.framework import ProviderInterface
 
 
 class MistralInterface(ProviderInterface):
