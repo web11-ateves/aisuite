@@ -22,6 +22,7 @@ class ProviderNames(str, Enum):
     AWS_BEDROCK = "aws-bedrock"
     ANTHROPIC = "anthropic"
     AZURE = "azure"
+    GROQ = "groq"
 
 
 class ProviderFactory:
@@ -38,6 +39,7 @@ class ProviderFactory:
             "AnthropicProvider",
         ),
         ProviderNames.AZURE: ("aisuite.providers.azure_provider", "AzureProvider"),
+        ProviderNames.GROQ: ("aisuite.providers.groq_provider", "GroqProvider"),
     }
 
     @classmethod
