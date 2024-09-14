@@ -23,6 +23,7 @@ class ProviderNames(str, Enum):
     ANTHROPIC = "anthropic"
     AZURE = "azure"
     GROQ = "groq"
+    GOOGLE = "google"
 
 
 class ProviderFactory:
@@ -40,6 +41,7 @@ class ProviderFactory:
         ),
         ProviderNames.AZURE: ("aisuite.providers.azure_provider", "AzureProvider"),
         ProviderNames.GROQ: ("aisuite.providers.groq_provider", "GroqProvider"),
+        ProviderNames.GOOGLE: ("aisuite.providers.google_provider", "GoogleProvider"),
     }
 
     @classmethod
