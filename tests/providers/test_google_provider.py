@@ -35,7 +35,9 @@ def test_vertex_interface():
     mock_response.candidates = [MagicMock()]
     mock_response.candidates[0].content.parts[0].text = response_text_content
 
-    with patch("vertexai.generative_models.GenerativeModel") as mock_generative_model:
+    with patch(
+        "aisuite.providers.google_provider.GenerativeModel"
+    ) as mock_generative_model:
         mock_model = MagicMock()
         mock_generative_model.return_value = mock_model
         mock_chat = MagicMock()

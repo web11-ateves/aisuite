@@ -1,6 +1,10 @@
 """The interface to Google's Vertex AI."""
 
 import os
+
+import vertexai
+from vertexai.generative_models import GenerativeModel, GenerationConfig
+
 from aisuite.framework import ProviderInterface, ChatCompletionResponse
 
 
@@ -12,7 +16,6 @@ class GoogleProvider(ProviderInterface):
 
     def __init__(self, **config):
         """Set up the Google AI client with a project ID."""
-        import vertexai
 
         """Set up the Google AI client with a project ID."""
         self.project_id = config.get("project_id") or os.getenv("GOOGLE_PROJECT_ID")
@@ -44,7 +47,6 @@ class GoogleProvider(ProviderInterface):
             The ChatCompletionResponse with the completion result.
 
         """
-        from vertexai.generative_models import GenerativeModel, GenerationConfig
 
         # Set the temperature if provided, otherwise use the default
         temperature = kwargs.get("temperature", DEFAULT_TEMPERATURE)
