@@ -18,28 +18,33 @@ class Provider(ABC):
 
 
 class ProviderNames(str, Enum):
-    OPENAI = "openai"
-    AWS_BEDROCK = "aws-bedrock"
     ANTHROPIC = "anthropic"
+    AWS_BEDROCK = "aws-bedrock"
     AZURE = "azure"
     GROQ = "groq"
+    MISTRAL = "mistral"
+    OPENAI = "openai"
 
 
 class ProviderFactory:
     """Factory to register and create provider instances based on keys."""
 
     _provider_info = {
-        ProviderNames.OPENAI: ("aisuite.providers.openai_provider", "OpenAIProvider"),
-        ProviderNames.AWS_BEDROCK: (
-            "aisuite.providers.aws_bedrock_provider",
-            "AWSBedrockProvider",
-        ),
         ProviderNames.ANTHROPIC: (
             "aisuite.providers.anthropic_provider",
             "AnthropicProvider",
         ),
+        ProviderNames.AWS_BEDROCK: (
+            "aisuite.providers.aws_bedrock_provider",
+            "AWSBedrockProvider",
+        ),
         ProviderNames.AZURE: ("aisuite.providers.azure_provider", "AzureProvider"),
         ProviderNames.GROQ: ("aisuite.providers.groq_provider", "GroqProvider"),
+        ProviderNames.MISTRAL: (
+            "aisuite.providers.mistral_provider",
+            "MistralProvider",
+        ),
+        ProviderNames.OPENAI: ("aisuite.providers.openai_provider", "OpenAIProvider"),
     }
 
     @classmethod
