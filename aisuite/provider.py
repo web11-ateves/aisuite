@@ -22,6 +22,7 @@ class ProviderNames(str, Enum):
     AWS_BEDROCK = "aws-bedrock"
     AZURE = "azure"
     GROQ = "groq"
+    GOOGLE = "google"
     MISTRAL = "mistral"
     OPENAI = "openai"
 
@@ -40,6 +41,7 @@ class ProviderFactory:
         ),
         ProviderNames.AZURE: ("aisuite.providers.azure_provider", "AzureProvider"),
         ProviderNames.GROQ: ("aisuite.providers.groq_provider", "GroqProvider"),
+        ProviderNames.GOOGLE: ("aisuite.providers.google_provider", "GoogleProvider"),
         ProviderNames.MISTRAL: (
             "aisuite.providers.mistral_provider",
             "MistralProvider",
