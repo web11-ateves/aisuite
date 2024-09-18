@@ -16,8 +16,6 @@ class GoogleProvider(ProviderInterface):
 
     def __init__(self, **config):
         """Set up the Google AI client with a project ID."""
-
-        """Set up the Google AI client with a project ID."""
         self.project_id = config.get("project_id") or os.getenv("GOOGLE_PROJECT_ID")
         self.location = config.get("region") or os.getenv("GOOGLE_REGION")
         self.app_creds_path = config.get("application_credentials") or os.getenv(
@@ -72,7 +70,7 @@ class GoogleProvider(ProviderInterface):
         response = chat.send_message(last_message)
 
         # Convert the response to the format expected by the OpenAI API
-        return self.convert_response_to_openai_format(response)
+        return self.normalize_response(response)
 
     def convert_openai_to_vertex_ai(self, messages):
         """Convert OpenAI messages to Google AI messages."""
@@ -98,8 +96,8 @@ class GoogleProvider(ProviderInterface):
                 message["role"] = role
         return messages
 
-    def convert_response_to_openai_format(self, response):
-        """Convert Google AI response to OpenAI's ChatCompletionResponse format."""
+    def normalize_response(self, response):
+        """Normalize the response from Google AI to match OpenAI's response format."""
         openai_response = ChatCompletionResponse()
         openai_response.choices[0].message.content = (
             response.candidates[0].content.parts[0].text
