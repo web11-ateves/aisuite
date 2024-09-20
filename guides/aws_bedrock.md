@@ -42,7 +42,7 @@ import aisuite as ai
 client = ai.Client()
 
 
-model_id = "meta.llama3-1-405b-instruct-v1:0" # Mode ID from above
+model_id = "meta.llama3-1-405b-instruct-v1:0" # Model ID from above
 provider = "aws-bedrock"
 
 messages = [
