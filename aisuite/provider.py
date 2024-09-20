@@ -23,6 +23,7 @@ class ProviderNames(str, Enum):
     AZURE = "azure"
     GROQ = "groq"
     GOOGLE = "google"
+    HUGGINGFACE = "huggingface"
     MISTRAL = "mistral"
     OLLAMA = "ollama"
     OPENAI = "openai"
@@ -41,8 +42,12 @@ class ProviderFactory:
             "AWSBedrockProvider",
         ),
         ProviderNames.AZURE: ("aisuite.providers.azure_provider", "AzureProvider"),
-        ProviderNames.GROQ: ("aisuite.providers.groq_provider", "GroqProvider"),
         ProviderNames.GOOGLE: ("aisuite.providers.google_provider", "GoogleProvider"),
+        ProviderNames.GROQ: ("aisuite.providers.groq_provider", "GroqProvider"),
+        ProviderNames.HUGGINGFACE: (
+            "aisuite.providers.huggingface_provider",
+            "HuggingFaceProvider",
+        ),
         ProviderNames.MISTRAL: (
             "aisuite.providers.mistral_provider",
             "MistralProvider",
