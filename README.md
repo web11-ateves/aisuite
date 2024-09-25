@@ -9,10 +9,26 @@ multiple LLMs through a standardized interface. Based on the OpenAI interface st
 makes it easy to interact with the most popular LLMs and compare the results of their chat based
 functionality, with support for more interfaces coming in the near future.
 
+Currently supported providers are -
+OpenAI, Anthropic, Azure, Google, AWS, Groq, Mistral, HuggingFace and Ollama.
+Internally, aisuite uses either the HTTP endpoint or the SDK for making calls to the provider.
+
 ## Installation
+
+This installs just the base package without installing any provider's SDK.
 
 ```shell
 pip install aisuite
+```
+
+This installs anthropic along with anthropic
+```shell
+pip install aisuite[anthropic]
+```
+
+This installs all the provider specific libraries
+```shell
+pip install aisuite[all]
 ```
 
 ## Set up
@@ -21,8 +37,8 @@ This library provides a thin wrapper around python client libraries to interact 
 various Generative AI providers allowing creators to seamlessly swap out or test responses
 from a number of LLMs without changing their code.
 
-To get started you will need the API Keys for the providers
-you intend to use and install the provider specific library to use.
+To get started you will need the API Keys for the providers you intend to use. You also need to
+install the provider specific library to use either separately or when installing aisuite.
 
 The API Keys are expected to be in the host ENV and can be set manually or by using a tool such
 as [`python-dotenv`](https://pypi.org/project/python-dotenv/) or [`direnv`](https://direnv.net/).
@@ -33,12 +49,6 @@ you would first need to set the API keys:
 ```shell
 export ANTHROPIC_API_KEY="your-anthropic-api-key"
 export OPENAI_API_KEY="your-openai-api-key"
-```
-
-Install the respective client libraries:
-
-```shell
-pip install openai anthropic
 ```
 
 In your python code:
@@ -63,12 +73,12 @@ for model in models:
     print(response.choices[0].message.content)
 
 ```
+Note that the model name in the create() call needs to be replaced with `<provider>:<model-name>`
+aisuite will call the appropriate provider with the right parameters based on the provider value.
+The current list of supported providers can be found by executing `aisuite.ProviderNames.values()`
 
 For more examples, check out the `examples` directory where you will find several
 notebooks that you can run to experiment with the interface.
-
-The current list of supported providers can be found in the `aisuite.providers`
-package.
 
 ## License
 
