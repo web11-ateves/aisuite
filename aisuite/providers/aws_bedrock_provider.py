@@ -56,7 +56,7 @@ class AWSBedrockProvider(Provider):
         # Any exception raised by Anthropic will be returned to the caller.
         # Maybe we should catch them and raise a custom LLMError.
         # https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html
-        system_message = None
+        system_message = []
         if messages[0]["role"] == "system":
             system_message = [{"text": messages[0]["content"]}]
             messages = messages[1:]

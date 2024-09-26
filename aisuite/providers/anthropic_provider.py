@@ -21,7 +21,7 @@ class AnthropicProvider(Provider):
             system_message = messages[0]["content"]
             messages = messages[1:]
         else:
-            system_message = None
+            system_message = []
 
         # kwargs.setdefault('max_tokens', DEFAULT_MAX_TOKENS)
         if "max_tokens" not in kwargs:
