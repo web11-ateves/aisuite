@@ -88,4 +88,29 @@ the code for both commercial and non-commercial purposes.
 
 If you would like to contribute, please read our [Contributing Guide](CONTRIBUTING.md)
 
+## Adding support for a provider
+We have made easy for a provider or volunteer to add support for a new platform.
+### Naming Convention for Provider Modules
 
+A convention-based approach is followed for loading providers, which relies on strict naming conventions for both the module name and the class name. The format to follow is based on the model identifier in the form of `provider:model`.
+
+- The provider's module file must be named in the format `<provider>_provider.py`.
+- The class inside this module must follow the format: the provider name with the first letter capitalized, followed by the suffix `Provider`.
+
+#### Examples:
+
+- **AWS**:
+  The provider class should be defined as:
+  ```python
+  class AwsProvider(BaseProvider)
+  ```
+  in providers/aws_provider.py.
+  
+- **OpenAI**:
+  The provider class should be defined as:
+  ```python
+  class OpenaiProvider(BaseProvider)
+  ```
+  in providers/openai_provider.py
+
+This convention simplifies the addition of new providers and ensures consistency across provider implementations.
