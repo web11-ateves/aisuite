@@ -36,8 +36,7 @@ and smooth out the experience for all involved. The community looks forward to y
 > [Documentation](https://github.com/andrewyng/aisuite/blob/main/README.md).
 
 Before you ask a question, it is best to search for existing [Issues](https://github.com/andrewyng/aisuite/issues)
-that might help you. In case you have found a suitable issue and still need clarification, you can write
-your question in this issue. It is also advisable to search the internet for answers first.
+that might help you. If you find a relevant issue that already exists and still need clarification, please add your question to that existing issue. We also recommend reaching out to the community in the aisuite [Discord](https://discord.gg/T6Nvn8ExSb) server.
 
 If you then still feel the need to ask a question and need clarification, we recommend the following:
 
