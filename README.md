@@ -86,7 +86,7 @@ the code for both commercial and non-commercial purposes.
 
 ## Contributing
 
-If you would like to contribute, please read our [Contributing Guide](CONTRIBUTING.md)
+If you would like to contribute, please read our [Contributing Guide](CONTRIBUTING.md) and join our [Discord](https://discord.gg/T6Nvn8ExSb) server!
 
 ## Adding support for a provider
 We have made easy for a provider or volunteer to add support for a new platform.
