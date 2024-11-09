@@ -4,7 +4,7 @@
 
 Simple, unified interface to multiple Generative AI providers.
 
-`aisuite` is an tool designed for researchers who need to evaluate and compare the responses of
+`aisuite` is an tool designed for developers who need to evaluate and compare the responses of
 multiple LLMs through a standardized interface. Based on the OpenAI interface standard, `aisuite`
 makes it easy to interact with the most popular LLMs and compare the results of their chat based
 functionality, with support for more interfaces coming in the near future.
