@@ -1,17 +1,17 @@
 # AWS
 
 To use AWS Bedrock with `aisuite` you will need to create an AWS account and
-navigate to `https://console.aws.amazon.com/bedrock/home`. This route
+navigate to [https://console.aws.amazon.com/bedrock/home]. This route
 will be redirected to your default region. In this example the region has been set to
 `us-west-2`. Anywhere the region is specified can be replaced with your desired region.
 
-Navigate to the `[overview](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/overview)` page
+Navigate to the [overview](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/overview) page
 directly or by clicking on the `Get started` link.
 
 ## Foundation Model Access
 
 You will first need to give your AWS account access to the foundation models by
-visiting the `[modelaccess](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/modelaccess)`
+visiting the [modelaccess](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/modelaccess)
 page to enable the models you would like to use. 
 
 After enabling the foundation models, navigate to [providers page](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/providers) 
