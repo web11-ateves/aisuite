@@ -1,7 +1,7 @@
 # AWS
 
 To use AWS Bedrock with `aisuite` you will need to create an AWS account and
-navigate to [https://console.aws.amazon.com/bedrock/home]. This route
+navigate to https://console.aws.amazon.com/bedrock/home. This route
 will be redirected to your default region. In this example the region has been set to
 `us-west-2`. Anywhere the region is specified can be replaced with your desired region.
 
