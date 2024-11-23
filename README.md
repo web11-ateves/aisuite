@@ -93,12 +93,12 @@ We follow a convention-based approach for loading providers, which relies on str
 
 #### Examples:
 
-- **AWS**:
+- **Hugging Face**:
   The provider class should be defined as:
   ```python
-  class AwsProvider(BaseProvider)
+  class HuggingfaceProvider(BaseProvider)
   ```
-  in providers/aws_provider.py.
+  in providers/huggingface_provider.py.
   
 - **OpenAI**:
   The provider class should be defined as:
