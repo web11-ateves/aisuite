@@ -51,5 +51,5 @@ print(response.choices[0].message.content)
 ### Notes
 
 - Ensure that the `model` variable matches the identifier of your model as seen in the Hugging Face Model Hub.
-- If you encounter any rate limits or API access restrictions, consider upgrading your Hugging Face plan to enable higher usage limits.
+- If you encounter any rate limits or API access restrictions, you may have to upgrade your Hugging Face plan to enable higher usage limits.
 """
